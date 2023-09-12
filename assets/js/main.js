@@ -19,9 +19,12 @@ il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'es
 const { createApp } = Vue
 
 createApp({
-  data(){
+    
+  
+
+data(){
     return {  
-        activeSlide: 0 ,
+        activeSlide: 0,
         slides:[
             {
             img: './assets/img/01.webp',
@@ -52,10 +55,10 @@ createApp({
             title: "Marvel's Avengers",
             text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
             }
-            
+
         ]    
     }
-  },
+},
 methods:{
     prev(){
         this.activeSlide--;
@@ -63,6 +66,7 @@ methods:{
         if (this.activeSlide < 0) {
             this.activeSlide = this.slides.length - 1
         }
+
     },
     next(){
         //console.log(this.slides.length);
@@ -72,10 +76,21 @@ methods:{
         if(this.activeSlide > this.slides.length - 1) {
             this.activeSlide = 0
         }
+
     },
     activeImg(i){
         this.activeSlide = i;
         console.log(i); 
-    }
-}
+    }, 
+
+    autoPlay(){
+        setInterval(()=>{
+            this.next();
+        },1000); 
+    },
+
+}, 
+mounted(){
+    this.autoPlay()
+},
 }).mount('#app')
