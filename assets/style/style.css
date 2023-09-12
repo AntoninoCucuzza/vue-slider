@@ -3,6 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #343a40;
+}
+
+.slider-wrapper{
+    color: white;
+    box-shadow: 0 0 10px;
+}
+/* 
+.test{
+    background-color: #000;
+    width: 100%;
+    height: 100px;
+} */
 
 .container {
     height: 100vh;

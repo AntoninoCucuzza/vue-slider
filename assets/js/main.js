@@ -72,6 +72,10 @@ methods:{
         if(this.activeSlide > this.slides.length - 1) {
             this.activeSlide = 0
         }
+    },
+    activeImg(i){
+        this.activeSlide = i;
+        console.log(i); 
     }
 }
 }).mount('#app')
