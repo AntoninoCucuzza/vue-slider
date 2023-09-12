@@ -12,28 +12,25 @@
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 <body>
+
     <div id="app">
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img src="./assets/img/01.webp" alt="Spiderman" />
+                    <img :src="slides[activeSlide].img" :alt="slides[activeSlide].title" />
                     <div class="text">
-                        <h3>Spiderman</h3>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
-                        </p>
+                        <h3>{{slides[activeSlide].title}}</h3>
+                        <p>{{slides[activeSlide].text}}</p>
                     </div>
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div class="prev" @click="prev()"></div>
+                    <div class="next" @click="next()"></div>
+
                     <div class="thumb active">
-                        <img src="./assets/img/01.webp" alt="Svezia" />
+                        <img src="./assets/img/01.webp" alt="Miles Morales" />
                     </div>
                     <div class="thumb">
                         <img src="./assets/img/02.webp" alt="Ratchet & Clank" />
