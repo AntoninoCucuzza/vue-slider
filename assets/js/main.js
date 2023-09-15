@@ -82,13 +82,14 @@ methods:{
         this.activeSlide = i;
         console.log(i); 
     }, 
-
     autoPlay(){
-        setInterval(()=>{
-            this.next();
-        },1000); 
-    },
-
+        this.auto = setInterval(() => {
+            this.next()
+        },3000);
+    },stop(){
+        clearInterval(this.auto)
+        console.log('stop');
+    }
 }, 
 mounted(){
     this.autoPlay()
